@@ -28,6 +28,8 @@
 - staged 상태의 파일들을 커밋을 통해 버전으로 기록
 - 커밋 메시지는 변경 사항을 나타낼 수 있도록 명확하게 작성
 
+\* 파일을 수정하였을 때 버전으로 기록하고 싶다면 add, commit
+
 **$ git log**
 - 현재 저장소에 기록된 커밋을 조회
 - add와 commit 모두 완료한 버전만 조회 가능
@@ -43,3 +45,7 @@
 2. changes to be committed: 파일을 만들고 add까지 완료한 상태
 3. nothing to commit, working tree clean: 수정사항 없이 add와 commit 모두 완료한 상태
 4. changes not staged for commit: 커밋된 적 있는 파일을 수정한 상태
+
+\* unmodified: 변화 없음<br>
+\* modified: 변화가 있으나 stagig area로 옮기지 않은 상태(add를 하지 않은 상태)<br>
+\* staged: add 명령어로 staging area로 옮김
