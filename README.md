@@ -113,16 +113,20 @@ printf("hello")
 \* staged: add 명령어로 staging area로 옮김
 
 # 원격저장소
-## 원격저장소 관리
-- 저장소 연결하기
+## 원격저장소 관리 명령어
+- 원격저장소는 항상 최신 버전만을 보여줌
+- 원격저장소 연결하기
   - $ git remote add origin \<url>
-- 저장소에 버전 업로드
+- 원격저장소에 버전 업로드
   - $ git push \<원격저장소이름> \<브랜치이름>
-- 저장소에 버전 가져오기
+- 원격저장소에 버전 가져오기
   - $ git p \<원격저장소이름> \<브랜치이름>
 - 다른 원격저장소에 있는 버전 가져오기
   - $ git clone \<url>
-- 원격 저장소는 항상 최신 버전만을 보여줌
+- 원격저장소 정보 확인
+  - $ git remote -v
+- 원격저장소 삭제
+  - $ git remote rm \<url>
 
 ### 오류 메시지
 Updates were rejected because the remote contains work that you do not have locally. ~
@@ -139,3 +143,9 @@ Updates were rejected because the remote contains work that you do not have loca
 - 이미 commit한 파일/폴더도 무시할 수 있을까?
   - 안된다... 처음부터 잘 설정하자
 - [gitignore.io](​https://gitignore.io/) 에서 원하는 설정을 검색해서 편하게 복붙 가능
+
+**\* $ git 명령어 구분하기**
+- init: 로컬에서 새로운 프로젝트 시작
+- clone: 원격에 있는 프로젝트 시작
+- pull: 프로젝트 개발 중 다른 사람 commit 가져오기
+- push: 내 로컬 프로젝트 공유
