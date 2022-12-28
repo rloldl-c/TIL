@@ -102,7 +102,7 @@ printf("hello")
 - git 저장소에 있는 파일의 상태를 확인
 - working directory와 staging area의 파일들만 확인 가능
 
-### 여러 메시지들
+## 여러 메시지들
 1. **untracked files**: 어떠한 파일을 만들었지만 add 하지 않은 상태
 2. **changes to be committed**: 파일을 만들고 add까지 완료한 상태
 3. **nothing to commit, working tree clean**: 수정사항 없이 add와 commit 모두 완료한 상태
@@ -111,3 +111,31 @@ printf("hello")
 \* unmodified: 변화 없음<br>
 \* modified: 변화가 있으나 stagig area로 옮기지 않은 상태(add를 하지 않은 상태)<br>
 \* staged: add 명령어로 staging area로 옮김
+
+# 원격저장소
+## 원격저장소 관리
+- 저장소 연결하기
+  - $ git remote add origin \<url>
+- 저장소에 버전 업로드
+  - $ git push \<원격저장소이름> \<브랜치이름>
+- 저장소에 버전 가져오기
+  - $ git p \<원격저장소이름> \<브랜치이름>
+- 다른 원격저장소에 있는 버전 가져오기
+  - $ git clone \<url>
+- 원격 저장소는 항상 최신 버전만을 보여줌
+
+### 오류 메시지
+Updates were rejected because the remote contains work that you do not have locally. ~
+- 원격저장소 버전이랑 로컬 버전이랑 다르니까 git pull 명령어를 사용해서 최신 버전을 받아와
+* 해결방법
+1. 원격저장소에 있는 commit을 로컬로 가져오기(pull)
+2. 로컬에서 두 commit을 병합 -> 동시에 같은 파일이 수정된 경우 merge conflict 발생(3일차에 배울 내용)
+3. 다시 원격저장소로 push
+
+## gitignore
+: git으로 관리하지 않을 파일/폴더를 지정해주는 것
+- .gitignore 파일을 하나 만들고 그 안에 git으로 관리하지 않을 파일/폴더명을 작성
+  - 확장자로도 관리 가능 > *.pptx: pptx를 모두 무시해라
+- 이미 commit한 파일/폴더도 무시할 수 있을까?
+  - 안된다... 처음부터 잘 설정하자
+- [gitignore.io](​https://gitignore.io/) 에서 원하는 설정을 검색해서 편하게 복붙 가능
