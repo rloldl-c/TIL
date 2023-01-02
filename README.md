@@ -1,4 +1,4 @@
-# 👀 KDT record
+# 👀 Today I Learned - KDT2
 
 ## Week 01
   - 2022-12-27
@@ -10,3 +10,7 @@
   
   - 2022-12-29
     - [Branch](Week_01/Branch.md)
+
+## Week 02
+  - 2023-01-02
+    - [자료형](Week_02/python_자료형.md)
