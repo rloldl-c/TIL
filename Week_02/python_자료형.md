@@ -4,7 +4,7 @@
     #### --> 프로그래밍 언어 = 컴퓨터에게 명령하기 위한 약속
 
 
-# 파이썬(Python)
+# 자료형(Data Type)
 ## 객체와 변수
 ### 객체(Object)
 >값을 가지고 있는 모든 것
@@ -36,7 +36,7 @@
     3. 길이 제한이 없고, 대소문자를 구별
     4. 예약어(True, False, and 등)는 식별자로 사용 불가능
 
-### 자료형(Data Type)
+### 자료형
 - 숫자: int, float, complex, boolean
 - 시퀀스: String, Tuple, List, Range
 - 컬렉션: Set, Dictionary
@@ -77,11 +77,12 @@
 
 ### 논리 연산자
 - 논리식을 판단하여 True / False 값을 반환
-    ```python
-    A and B #A와 B 모두 True일 때 True
-    A or B #A 와 B 모두 False일 때 False
-    Not #True를 False로, False를 True로
-    ```
+
+|연산|결과|
+|----|---|
+|A and B|A와 B 모두 True일 때 True|
+|A or B|A 와 B 모두 False일 때 False|
+|Not|True를 False로, False를 True로|
 
 ## 컨테이너(Container)
 - 여러 개의 값을 담을 수 있는 객체
@@ -89,18 +90,18 @@
 - 컬렉션/비시퀀스: 세트, 딕셔너리
 
 ### 시퀀스형 주요 공통 연산자
-  ```python
-  s[i] # s의 i번째 항목
-  s[i:j] # s의 i부터 j까지 슬라이스
-  s[i:j:k] # s의 i부터 j까지 스텝 k의 슬라이스
-  s + t # s와 t 이어 붙이기
-  s * n # s를 n번 반복
-  x in s # s의 항목 중 x와 같은 것이 있으면 True, 아니면 False
-  x not in s # s의 항목 중 x와 같은 것이 있으면 False, 아니면 True
-  len(s) # s의 길이
-  min(s) # s의 가장 작은 항목
-  max(s) # s의 가장 큰 항목
-  ```
+|연산|결과|
+|----|---|
+|s[i]| s의 i번째 항목|
+|s[i:j]| s의 i부터 j까지 슬라이스|
+|s[i:j:k]| s의 i부터 j까지 스텝 k의 슬라이스|
+|s + t| s와 t 이어 붙이기|
+|s * n| s를 n번 반복|
+|x in s| s의 항목 중 x와 같은 것이 있으면 True, 아니면 False|
+|x not in s| s의 항목 중 x와 같은 것이 있으면 False, 아니면 True|
+|len(s)| s의 길이|
+|min(s)| s의 가장 작은 항목|
+|max(s)| s의 가장 큰 항목|
 
 ### 문자열(String Type)
 - 모든 문자는 str 타입
@@ -163,5 +164,31 @@
     numbers #[1, 3, 4, 5]
     ```
 
-## None
+### None
 - 값이 없음을 표현하기 위한 타입
+
+### String Interporlation
+```python
+name = '은비'
+age = 26
+print(f'이름은 {name}이고, {age}살 입니다.')
+#이름은 은비이고, 26살 입니다.
+```
+
+# 형변환
+#### 암시적 형변환
+- 사용자가 의도하지 않고 파이썬 내부적으로 자료형을 변환하는 경우
+    ```python
+    True + 3
+    # 4
+    3 + 5.0
+    # 8.0
+    ```
+### 명시적 형변환
+- 특정 함수를 활용하여 의도적으로 자료형을 변환하는 경우
+    ```python
+    '3' + 4
+    # Typeerror
+    int('3') + 4
+    # 7
+    ```
