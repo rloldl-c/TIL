@@ -1,4 +1,4 @@
-# 👀 Today I Learned - KDT2
+# 👀 Today I Learned - KDT2기
 
 ## Week 01
   - 2022-12-27
