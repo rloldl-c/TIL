@@ -24,6 +24,7 @@
 - [자료 구조](Algorithm/data_structure.md)
 - [이차원 리스트](Algorithm/2d_list.md)
 - [완전 탐색](Algorithm/binary_search.md)
+- [이진 탐색](Algorithm/binary_search.md)
 - [그래프](Algorithm/graph.md)
 
 <br>
