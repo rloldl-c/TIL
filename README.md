@@ -1,11 +1,6 @@
-# 👀 Today I Learned - KDT2기
+# Today I Learned - KDT2기
 
-## Daily review
-- [2023 Feb](daily_review/2023_Feb.md)
-
-<br>
-
-## Python
+## 💻 Python
 - [자료형](Python/data_type.md)
 - [조건문](Python/conditional_statement.md)
 - [반복문](Python/loop_statement.md)
@@ -19,18 +14,24 @@
 
 <br>
 
-## Algorithm
+## ⚙️ Algorithm
 - [시간 복잡도](Algorithm/time_complexity.md)
 - [자료 구조](Algorithm/data_structure.md)
 - [이차원 리스트](Algorithm/2d_list.md)
 - [완전 탐색](Algorithm/binary_search.md)
 - [이진 탐색](Algorithm/binary_search.md)
 - [그래프](Algorithm/graph.md)
+- [깊이 우선 탐색](Algorithm/dfs.md)
 
 <br>
 
-## etc.
+## 💭 etc.
 - [브랜치](etc/Branch.md)
 - [CIL](etc/CLI.md)
 - [markdown](etc/markdown.md)
 - [github](etc/git.md)
+
+<br>
+
+## 📓 Daily review
+- [2023 Feb](daily_review/2023_Feb.md)
