@@ -25,6 +25,11 @@
 
 <br>
 
+## 📊 Database
+- [관계형](DB/realational_db.md)
+
+<br>
+
 ## 💭 etc.
 - [브랜치](etc/Branch.md)
 - [CIL](etc/CLI.md)
@@ -34,4 +39,4 @@
 <br>
 
 ## 📓 Daily review
-- [2023 Feb](daily_review/2023_Feb.md)
+- [2023 Feb](Daily_review/2023.md)
