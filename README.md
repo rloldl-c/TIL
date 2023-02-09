@@ -1,40 +1,41 @@
 # Today I Learned - KDT2기
 
 ## 💻 Python
-- [자료형](Python/data_type.md)
-- [조건문](Python/conditional_statement.md)
-- [반복문](Python/loop_statement.md)
-- [함수](Python/function.md)
-- [에러](Python/error.md)
-- [파일 입출력](Python/file_IO.md)
-- [메서드](Python/method.md)
-- [사용자 정의 함수](Python/user_defined_function.md)
-- [사용자 정의 클래스](Python/user_defined_class.md)
-- [추가 문법](Python/python_etc.md)
+- [Data type](Python/data_type.md)
+- [Conditional statement](Python/conditional_statement.md)
+- [Loop statement](Python/loop_statement.md)
+- [Function](Python/function.md)
+- [Error](Python/error.md)
+- [File I/O](Python/file_IO.md)
+- [Method](Python/method.md)
+- [User defined function](Python/user_defined_function.md)
+- [User defined class](Python/user_defined_class.md)
+- [etc](Python/python_etc.md)
 
 <br>
 
 ## ⚙️ Algorithm
-- [시간 복잡도](Algorithm/time_complexity.md)
-- [자료 구조](Algorithm/data_structure.md)
-- [이차원 리스트](Algorithm/2d_list.md)
-- [완전 탐색](Algorithm/binary_search.md)
-- [이진 탐색](Algorithm/binary_search.md)
-- [그래프](Algorithm/graph.md)
-- [깊이 우선 탐색](Algorithm/dfs.md)
+- [Time complexity](Algorithm/time_complexity.md)
+- [Data structure](Algorithm/data_structure.md)
+- [Matrix](Algorithm/2d_list.md)
+- [Exhaustive search](Algorithm/exhaustive_search.md)
+- [Binary Search](Algorithm/binary_search.md)
+- [Graph](Algorithm/graph.md)
+- [DFS](Algorithm/dfs.md)
 
 <br>
 
 ## 📊 Database
-- [관계형](DB/realational_db.md)
+- [Rational](DB/realational_db.md)
+- [SQL](DB/SQL.md)
 
 <br>
 
 ## 💭 etc.
-- [브랜치](etc/Branch.md)
+- [Branch](etc/Branch.md)
 - [CIL](etc/CLI.md)
-- [markdown](etc/markdown.md)
-- [github](etc/git.md)
+- [Markdown](etc/markdown.md)
+- [Github](etc/git.md)
 
 <br>
 
