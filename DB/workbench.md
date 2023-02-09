@@ -27,5 +27,11 @@
 ## 쿼리 실행
 
 1. 에디터에 쿼리문 입력
+    - 에디터는 Query - New Tap to Current Server로 열 수 있음
+
 2. 실행 후 출력 된 결과 확인
 ![mysql06](png/workbench06.png)
+
+3. 쿼리문 실행하는 방법
+    1. 첫번째 번개(Ctrl + Shift + Enter): 모든 코드 실행
+    2. 두번째 번개(Ctrl + Enter): 커서가 있는 코드만 실행
