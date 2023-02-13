@@ -33,7 +33,7 @@ FROM
 ```
 <br>
 
-## Querying
+## 1. Querying
 ## `SELECT statement`
 - SELECT 키워드 다음에 데이터를 선택하려는 필드를 하나 이상 지정
 - FROM 키워드 다음에 데이터를 선택하려는 데이블의 이름을 지정
@@ -82,7 +82,7 @@ FROM
 
 <br>
 
-## Sorting
+## 2. Sorting
 ## `ORDERED BY clause`
 - FROM clause 뒤에 위치
 - 하나 이상의 칼럼을 기준으로 오름차순, 내림차순으로 정렬하여 출력
@@ -107,3 +107,145 @@ ORDER BY
     quantity DESC;
 -- price가 동일한 notebook과 rubber의 quantity에 대해서만 내림차순 정렬 적용
 ```
+
+<br>
+
+## 3. Filtering
+### 1) 중복 제거
+```sql
+SELECT DISTINCT
+    select_list
+FROM
+    table_name;
+```
+- SELECT 키워드 바로 뒤에 작성
+- SELECT DISTINCT 다음에 고유한 값을 선택하려는 하나 이상의 필드를 지정
+
+<br>
+
+### 2) 검색 조건 지정
+```sql
+SELECT
+    select_list
+FROM
+    table_name
+WHERE
+    search_condition;
+```
+- FROM clause 뒤에 위치
+- 비교 연산자 및 논리 연산자를 사용하여 조건을 지정
+1. `BETWEEN`
+    - 테이블 employees에서 officeCode 필드 값이 1에서 4 사이 값인 데이터의 lastName, firstName, officeCode를 오름차순 조회
+    ```sql
+    SELECT
+        lastName, firstName, officeCode
+    FROM
+        employees
+    WHERE
+        officeCode BETWEEN 1 AND 4
+    ORDER BY
+        officeCode;
+    ```
+
+2. `IN`
+    - 테이블 employees에서 officeCode 필드 값이 1 또는 3 또는 4인 데이터의 lastName, firstName, officeCode를 조회
+    ```sql
+    SELECT
+        lastName, firstName, officeCode
+    FROM
+        employees
+    WHERE
+        officeCode IN (1, 3, 4)
+    ```
+
+3. Wildcard
+    - `LIKE`와 함께 사용
+    - `%` : 0개 이상의 문자열과 일치하는지 확인
+    - `_` : 단일 문자와 일치하는지 확인
+
+        |operator|description|
+        |--------|-----------|
+        |`LIKE 'a%'`| 'a'로 시작하는 데이터|
+        |`LIKE '%a'`| 'a'로 끝나는 데이터|
+        |`LIKE '%or%'`|'or'을 포함하는 데이터|
+        |`LIKE '_r%'`| 'r'이 두번째로 오는 데이터|
+        |`LIKE 'a_%_%'`|'a'로 시작하면서 길이가 최소 3인 데이터'|
+
+### 3) 조회하는 레코드 수 제한
+```sql
+SELECT
+    select_list
+FROM
+    table_name
+LIMIT [offset,] row_count;
+```
+- LIMIT clause는 하나 또는 두 개의 인자를 사용
+- row_count는 조회할 최대 레코드 수를 지정
+- ex) 테이블 customers에서 contactFirstName, creditLimit 필드 데이터를 creditLimit 기준 4번째로 높은 데이터부터 7번째 데이터까지 조회
+```sql
+SELECT
+    contactFirstName, creditLimit
+FROM
+    customers
+ORDER BY
+    creditLimit DESC
+LIMIT 3, 4;
+-- LIMIT 4 OFFSET 3;
+```
+
+<br>
+
+## 4. Grouping
+- 레코드를 그룹화하여 요약본 생성(with 집계함수)
+```sql
+SELECT
+    c1, c2, ..., cn, aggregate_function(ci)
+FROM
+    table_name
+GROUP BY
+    c1, c2, ..., cn;
+```
+- FROM 및 WHERE 절 뒤에 배치
+- GROUP BY 절 뒤에 그룹화할 필드 목록 작성
+- aggregate function
+    
+    |name|description|
+    |----|----------|
+    |`AVG()`|그룹의 평균 계산|
+    |`COUNT()`|그룹의 개수 계산|
+    |`MAX()`|그룹에서 최대값 계산|
+    |`MIN()`|그룹에서 최소값 계산|
+    |`SUM()`|그룹의 총합 계산|
+
+### `HAVING clause`
+- 그룹에는 WHERE 대신 HAVING으로 세부 조건을 지정
+- ex) 테이블 customers에서 country 필드를 그룹화하여 각 그룹에 대한 creditLimit의 평균 값이 80000을 초과하는 데이터 조회
+    ```sql
+    SELECT
+        country, AVG(creditLimit)
+    FROM
+        customers
+    GROUP BY
+        country
+    HAVING
+        AVG(creditLimit) > 80000;
+    ```
+
+## 참고
+### SELECT statement 작성 순서
+1. SELECT
+2. FROM
+3. WHERE
+4. GROUP BY
+5. HAVING
+6. ORDER BY
+7. LIMIT
+
+### SELECT statement 실행 순서
+1. FROM: 테이블에서
+2. WHERE: 특정 조건에 맞춰
+3. GROUP BY: 그룹화 하고
+4. HAVING: 그룹 중에 조건이 있다면 맞춰서
+5. SELECT: 조회하여
+6. ORDER BY: 정렬한 후
+7. LIMIT: 특정 위치의 값을 가져온다
