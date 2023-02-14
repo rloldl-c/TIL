@@ -27,7 +27,9 @@
 
 ## 📊 Database
 - [Rational](DB/realational_db.md)
-- [SQL](DB/SQL.md)
+- [DQP](DB/DQL.md)
+- [DDL](DB/DDL.md)
+- [DML](DB/DML.md)
 
 <br>
 
