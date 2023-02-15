@@ -30,6 +30,7 @@
 - [DQP](DB/DQL.md)
 - [DDL](DB/DDL.md)
 - [DML](DB/DML.md)
+- [JOIN](DB/JOIN.md)
 
 <br>
 
