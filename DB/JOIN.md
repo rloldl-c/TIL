@@ -142,3 +142,12 @@ RIGHT JOIN
 ```
 - 모든 레코드 조회
 - table1에는 존재하고 table2에는 존재하지 않는 레코드, table2에는 존재하고 table1에는 존재하지 않는 레코드는 NULL로 표시
+
+<br>
+
+### * 기본키와 외래키 필드 명이 같은 경우
+```sql
+SELECT *
+FROM table1
+INNER JOIN table2 USING (column)
+```
