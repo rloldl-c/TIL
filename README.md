@@ -32,6 +32,7 @@
 - [DML](DB/DML.md)
 - [JOIN](DB/JOIN.md)
 - [Subqeury](DB/subquery.md)
+- [etc.](DB/etc.md)
 
 <br>
 
