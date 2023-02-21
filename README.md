@@ -22,6 +22,7 @@
 - [Binary Search](Algorithm/binary_search.md)
 - [Graph](Algorithm/graph.md)
 - [DFS](Algorithm/dfs.md)
+- [Shortest Path](Algorithm/shortest_path.md)
 
 <br>
 
