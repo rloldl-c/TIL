@@ -37,6 +37,10 @@
 
 <br>
 
+## 🎨 Web
+- [Basic](Web/basic.md)
+- [Box_model](Web/box_model.md)
+
 ## 💭 etc.
 - [Branch](etc/Branch.md)
 - [CIL](etc/CLI.md)
