@@ -23,6 +23,7 @@
 - [Graph](Algorithm/graph.md)
 - [DFS](Algorithm/dfs.md)
 - [Shortest Path](Algorithm/shortest_path.md)
+- [Greedy](Algorithm/greedy.md)
 
 <br>
 
