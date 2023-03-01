@@ -40,7 +40,8 @@
 
 ## 🎨 Web
 - [Basic](Web/basic.md)
-- [Box_model](Web/box_model.md)
+- [Box model](Web/box_model.md)
+- [Felx box](Web/flexible.md)
 
 ## 💭 etc.
 - [Branch](etc/Branch.md)
