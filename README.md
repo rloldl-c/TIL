@@ -42,6 +42,9 @@
 - [Basic](Web/basic.md)
 - [Box model](Web/box_model.md)
 - [Felx box](Web/flexible.md)
+- [Semantic](Web/semantic.md)
+
+<br>
 
 ## 💭 etc.
 - [Branch](etc/Branch.md)
