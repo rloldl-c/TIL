@@ -1,20 +1,3 @@
-- flex item: flex box로 움직이는 요소들
-- 가로가 메인축인 왼쪽에서 오른쪽으로 배치되는 방향이 기본 방향
-- main은 가로, cross는 세로로 외우면 안됨
-    - 메인축이 수직으로 바뀌면 cross가 수평이 되는 것
-- flex container: flex item의 부모 요소
-    - 1차 자식요소들을 컨트롤
-- align-item: 행 하나를 움직이는 속성
-- align-self: 개별 item을 정렬
-    - 부모가 아닌 flex item에 작성
-
-- `content` : 여러행
-- `items` : 행 하나
-- `self` : item 하나
-
-- flex-grow는 비율이 아님
-
-
 # Flexbox
 - 요소를 행과 열 형태로 배치하는 1차원 레이아웃 방식
 
