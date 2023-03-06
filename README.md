@@ -44,7 +44,7 @@
 - [Felx box](Web/flexible.md)
 - [Semantic](Web/semantic.md)
 - [Bootstrap](Web/bootstrap.md)
-- [PJT](Web/PJT/)
+- [Practice](Web/Practice/README.md)
 
 <br>
 
