@@ -36,3 +36,9 @@
 ## Component
 - Bootstrap에서 제공하는 UI 관련 요소
 - Alerts, Badges, Buttons, Cards, Navbar 등
+
+### Modal
+- 일반적으로 `</body>` 바로 위에 모아서 작성
+    - `z-index` 값이 다른 값에 묻히면 안 되기 때문
+- `.button`의 `target` 값과 `.modal`의 `id` 값이 일치해야 제대로 작동
+    - 여러 modal을 사용할 경우 id를 각각 다르게 지정해줘야 개별적으로 작동 가능
