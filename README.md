@@ -44,6 +44,7 @@
 - [Felx box](Web/flexible.md)
 - [Semantic](Web/semantic.md)
 - [Bootstrap](Web/bootstrap.md)
+- [Grid System](Web/grid_system.md)
 - [Practice](Web/Practice/README.md)
 
 <br>
