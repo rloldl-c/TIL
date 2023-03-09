@@ -46,7 +46,6 @@
 - [Bootstrap](Web/bootstrap.md)
 - [Grid System](Web/grid_system.md)
 - [Breakpoints](/TIL/Web/breakpoint.md)
-- [Practice](Web/Practice/README.md)
 
 <br>
 
