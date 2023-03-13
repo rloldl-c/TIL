@@ -39,6 +39,7 @@
 <br>
 
 ## 🎨 Web
+### HTML/CSS
 - [Basic](Web/basic.md)
 - [Box model](Web/box_model.md)
 - [Felx box](Web/flexible.md)
@@ -46,6 +47,8 @@
 - [Bootstrap](Web/bootstrap.md)
 - [Grid System](Web/grid_system.md)
 - [Breakpoints](/TIL/Web/breakpoint.md)
+### JavaScript
+- [DOM](/Web/DOM.md)
 
 <br>
 
