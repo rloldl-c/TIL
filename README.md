@@ -49,6 +49,7 @@
 - [Breakpoints](/TIL/Web/breakpoint.md)
 ### JavaScript
 - [DOM](/Web/DOM.md)
+- [Syntax](/Web/javascript_syntax.md)
 
 <br>
 
