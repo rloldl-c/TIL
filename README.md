@@ -51,6 +51,7 @@
 - [DOM](/Web/DOM.md)
 - [Syntax](/Web/javascript_syntax.md)
 - [Objects(Function, Object, Array)](/Web/js_objects.md)
+- [Event](/Web/js_event.md)
 
 <br>
 
