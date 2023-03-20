@@ -52,6 +52,8 @@
 - [Syntax](/Web/javascript_syntax.md)
 - [Objects(Function, Object, Array)](/Web/js_objects.md)
 - [Event](/Web/js_event.md)
+### Django
+- [Understanding Django and framework](/Web/Django.md)
 
 <br>
 
@@ -64,4 +66,4 @@
 <br>
 
 ## 📓 Daily review
-- [2023 Feb](Daily_review/2023.md)
+- [2023](/2023.md)
