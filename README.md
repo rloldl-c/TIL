@@ -54,6 +54,7 @@
 - [Event](/Web/js_event.md)
 ### Django
 - [Understanding Django and framework](/Web/Django.md)
+- [Design pattern](/Web/dj_design_pattern.md)
 
 <br>
 
