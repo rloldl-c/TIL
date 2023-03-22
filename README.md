@@ -55,6 +55,7 @@
 ### Django
 - [Understanding Django and framework](/Web/Django.md)
 - [Design pattern](/Web/dj_design_pattern.md)
+- [Template](/Web/dj_template.md)
 
 <br>
 
