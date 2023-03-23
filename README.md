@@ -38,8 +38,8 @@
 
 <br>
 
-## 🎨 Web
-### HTML/CSS
+## 🎨 HTML/CSS
+
 - [Basic](Web/basic.md)
 - [Box model](Web/box_model.md)
 - [Felx box](Web/flexible.md)
@@ -47,15 +47,18 @@
 - [Bootstrap](Web/bootstrap.md)
 - [Grid System](Web/grid_system.md)
 - [Breakpoints](/TIL/Web/breakpoint.md)
-### JavaScript
-- [DOM](/Web/DOM.md)
-- [Syntax](/Web/javascript_syntax.md)
-- [Objects(Function, Object, Array)](/Web/js_objects.md)
-- [Event](/Web/js_event.md)
-### Django
-- [Understanding Django and framework](/Web/Django.md)
-- [Design pattern](/Web/dj_design_pattern.md)
-- [Template](/Web/dj_template.md)
+
+## 🎨 JavaScript
+- [DOM](/JavaScript/DOM.md)
+- [Syntax](/JavaScript/javascript_syntax.md)
+- [Objects(Function, Object, Array)](/JavaScript/js_objects.md)
+- [Event](/JavaScript/js_event.md)
+
+## 🎨 Django
+- [Understanding Django and framework](/Django/Django.md)
+- [Design pattern](/Django/dj_design_pattern.md)
+- [Template](/Django/dj_template.md)
+- [URLs](/Django/urls.md)
 
 <br>
 
