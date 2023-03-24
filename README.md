@@ -59,6 +59,7 @@
 - [Design pattern](/Django/dj_design_pattern.md)
 - [Template](/Django/dj_template.md)
 - [URLs](/Django/urls.md)
+- [Model](/Django/model.md)
 
 <br>
 
