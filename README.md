@@ -60,6 +60,7 @@
 - [Template](/Django/dj_template.md)
 - [URLs](/Django/urls.md)
 - [Model](/Django/model.md)
+- [ORM](/Django/orm.md)
 
 <br>
 
