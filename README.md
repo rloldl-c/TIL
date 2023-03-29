@@ -61,6 +61,7 @@
 - [URLs](/Django/urls.md)
 - [Model](/Django/model.md)
 - [ORM](/Django/orm.md)
+- [ORM with view](/Django/orm_with_view.md)
 
 <br>
 
