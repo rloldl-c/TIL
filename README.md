@@ -62,6 +62,7 @@
 - [Model](/Django/model.md)
 - [ORM](/Django/orm.md)
 - [ORM with view](/Django/orm_with_view.md)
+- [ModelForm](/Django/form.md)
 
 <br>
 
