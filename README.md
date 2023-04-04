@@ -63,6 +63,8 @@
 - [ORM](/Django/orm.md)
 - [ORM with view](/Django/orm_with_view.md)
 - [ModelForm](/Django/form.md)
+- [Cookie & Session](/Django/cookie_session.md)
+- [Authentication](/Django/authetication.md)
 
 <br>
 
