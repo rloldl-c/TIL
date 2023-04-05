@@ -60,7 +60,7 @@ admin.site.register(User, UserAdmin)
 ```
 <br>
 
-## Login
+## 로그인
 - session을 create
 ### 1. 로그인 페이지
 ```python
@@ -116,7 +116,7 @@ def login(request):
 ```
 <br>
 
-## Logout
+## 로그아웃
 - session을 delete
 ```python
 # accounts/urls.py
@@ -143,6 +143,7 @@ def logout(request):
   <input type="submit" value="logout">
 </form>
 ```
+<br>
 
 ## Template with Authentication Data
 ### 현재 로그인 되어 있는 유저 정보 출력
@@ -165,4 +166,257 @@ def logout(request):
 {% else %}
   <a href="{% url 'accounts:login %}">login</a>
 {% endif %}
+```
+<br>
+
+## 회원가입
+- user를 create
+### 1. 회원가입 페이지 작성
+```python
+# accounts/urls.py
+app_name='accounts'
+urlpatterns = [
+    ...,
+    path('signup/', views.signup, name='signup'),
+]
+```
+```python
+# accounts/views.py
+from django.contrib.auth.forms import UserCreationForm
+
+def signup(request):
+    if request.method == 'POST':
+        pass
+    else:
+        form = UserCreationForm()
+    context = {
+        'form': form,
+    }
+    return render(request, 'accounts/signup.html', context)
+```
+```html
+<!-- accounts/signup.html -->
+<form action="{% url 'accounts:signup' %}" method="POST">
+  {% csrf_token %}
+  <input type="submit" value="sign up">
+</form>
+```
+### 2. 회원가입 로직
+```python
+# accounts/views.py
+
+def signup(request):
+    if request.method == 'POST':
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+           form.save()
+           return redirect('articles:index')
+    else:
+        form = UserCreationForm()
+    context = {
+        'form': form,
+    }
+    return render(request, 'accounts/signup.html', context)
+```
+### `UserCreationForm()`
+- 해당 폼에서 custom user model이 아닌 기존 user model을 사용하기 때문에 오류 발생
+```python
+# accounts/forms.py
+# 현재 프로젝트에서 활성화된 사용자 모델을 반환
+from django.contrib.auth import get_user_model
+from django.contrib.auth.forms import UserCreationForm, UserChangeForm
+
+class CustomUserCreationForm(UserCreationForm):
+    class Meta(UserCreationForm.Meta):
+        model = get_user_model()
+
+
+class CustomUserChangeForm(UserChangeForm):
+    class Meta(UserChangeForm.Meta):
+        model = get_user_model()
+```
+### 수정된 회원가입 로직
+```python
+# accounts/views.py
+from .forms import CustomUserCreationForm
+
+def signup(request):
+    if request.method == 'POST':
+        form = CustomUserCreationForm(request.POST)
+        if form.is_valid():
+           form.save()
+           return redirect('articles:index')
+    else:
+        form = CustomUserCreationForm()
+    context = {
+        'form': form,
+    }
+    return render(request, 'accounts/signup.html', context)
+```
+<br>
+
+## 회원 탈퇴
+- user 객체를 delete
+```python
+# accounts/urls.py
+app_name='accounts'
+urlpatterns = [
+    ...,
+    path('delete/', views.delete, name='delete'),
+]
+```
+```python
+# accounts/views.py
+from django.contrib.auth.forms import UserCreationForm
+
+def delete(request):
+    request.user.delete()
+    return redirect('articles:index')
+```
+```html
+<!-- articles/index.html -->
+<form action="{% url 'accounts:delete' %}" method="POST">
+  {% csrf_token %}
+  <input type="submit" value="sign out">
+</form>
+```
+### 탈퇴시 세션도 함께 지우기
+```python
+# accounts/views.py
+
+def delete(request):
+    request.user.delete()
+    auth_logout(request)
+    return redirect('articles:index')
+```
+- 탈퇴 후 로그아웃을 진행
+- 로그아웃을 먼저 수행하면 탈퇴할 회원 정보가 없어짐
+<br>
+
+## 회원 정보 수정
+```python
+# accounts/urls.py
+app_name='accounts'
+urlpatterns = [
+    ...,
+    path('update/', views.update, name='update'),
+]
+```
+```python
+# accounts/views.py
+from .forms import CustomUserChangeForm
+
+def signup(request):
+    if request.method == 'POST':
+        pass
+    else:
+        form = CustomUserChangeForm(instance=request.user)
+    context = {
+        'form': form,
+    }
+    return render(request, 'accounts/signup.html', context)
+```
+```html
+<!-- accounts/signup.html -->
+<form action="{% url 'accounts:update' %}" method="POST">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <input type="submit">
+</form>
+```
+### `CustomUserChangeForm` fields 재정의
+- 재정의 하지 않을 경우 사용자가 admin 계정에서만 볼 수 있는 정보들도 수정이 가능
+```python
+# accounts/forms.py
+class CustomUserChangeForm(UserChangeForm):
+    class Meta(UserChangeForm.Meta):
+        model = get_user_model()
+        fields = ('email,' 'first_name', 'last_name')
+```
+### 수정된 로직
+```python
+# accounts/views.py
+
+def signup(request):
+    if request.method == 'POST':
+        form = CustomUserChangeForm(request.POST, instance=request.user)
+    else:
+        form = CustomUserChangeForm(instance=request.user)
+    context = {
+        'form': form,
+    }
+    return render(request, 'accounts/signup.html', context)
+```
+<br>
+
+## 비밀번호 변경
+- `accounts/password/`
+- django에서 정의한 비밀번호 변경 페이지가 존재
+### 1. 비밀번호 변경 페이지 작성
+```python
+# accounts/urls.py
+app_name='accounts'
+urlpatterns = [
+    ...,
+    path('password/', views.change_password, name='change_password'),
+]
+```
+```python
+# accounts/views.py
+from django.contrib.auth.forms import PasswordChangeForm
+
+def signup(request):
+    if request.method == 'POST':
+        pass
+    else:
+        form = PasswordChangeForm(request.user)
+    context = {
+        'form': form,
+    }
+    return render(request, 'accounts/change_password.html', context)
+```
+```html
+<!-- accounts/change_password.html -->
+<form action="{% url 'accounts:change_password' %}" method="POST">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <input type="submit">
+</form>
+```
+### 2. 비밀번호 변경 로직
+```python
+# accounts/views.py
+
+def signup(request):
+    if request.method == 'POST':
+        form = PasswordChangeForm(request.user, request.POST)
+        if form.is_valid():
+           form.save()
+           return redirect('articles:index')
+    else:
+        form = UserCreationForm()
+    context = {
+        'form': form,
+    }
+    return render(request, 'accounts/signup.html', context)
+```
+### 세션 무효화
+- 비밀번호가 변경되면 기존 세션과 일치하지 않아 로그아웃 상태로 redirect
+```python
+# accounts/views.py
+from django.contrib.auth import update_session_auth_hash
+
+def signup(request):
+    if request.method == 'POST':
+        form = PasswordChangeForm(request.user, request.POST)
+        if form.is_valid():
+           user = form.save()
+           update_session_auth_hash(request, user)
+           return redirect('articles:index')
+    else:
+        form = UserCreationForm()
+    context = {
+        'form': form,
+    }
+    return render(request, 'accounts/signup.html', context)
 ```
