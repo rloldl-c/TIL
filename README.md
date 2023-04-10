@@ -65,6 +65,7 @@
 - [ModelForm](/Django/form.md)
 - [Cookie & Session](/Django/cookie_session.md)
 - [Authentication](/Django/authetication.md)
+- [Static Files](/Django/static_files.md)
 
 <br>
 
