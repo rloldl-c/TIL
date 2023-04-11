@@ -66,6 +66,7 @@
 - [Cookie & Session](/Django/cookie_session.md)
 - [Authentication](/Django/authetication.md)
 - [Static Files](/Django/static_files.md)
+- [Many to one relationships](/Django/many_to_one.md)
 
 <br>
 
