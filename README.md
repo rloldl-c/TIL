@@ -67,6 +67,7 @@
 - [Authentication](/Django/authetication.md)
 - [Static Files](/Django/static_files.md)
 - [Many to one relationships](/Django/many_to_one.md)
+- [Many to many relationships](/Django/many_to_many.md)
 
 <br>
 
