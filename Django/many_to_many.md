@@ -170,3 +170,59 @@ def likes(request, article_pk):
   <hr>
 {% endfor %}
 ```
+
+<br>
+
+## User - User
+- follow 기능 구현
+### 1. User 모델에 ManyToManyField 작성
+```python
+# accounts/models.py
+
+class User(AbstractUser):
+    followings = models.ManyToManyField('self', symmetrical=False, related_name='followers')
+```
+### 2. url 및 view 함수 작성
+```python
+# accounts/urls.py
+
+urlpatterns = [
+    ...,
+    path('<int:you_pk>/follow/', views.follow, name='follow')
+]
+```
+```python
+# accounts/views.py
+
+def follow(request, you_pk):
+    User = get_user_model()
+    you = User.objects.get(pk=you_pk)
+    me = request.user
+
+    if you != me:
+        if you.followers.filter(pk=me.pk).exists():
+            you.followers.remove(me)
+        else:
+            you.followers.add(me)
+    
+    return redirect('accounts:profile', you.username)
+```
+### 3. 팔로우 버튼 생성
+```html
+<!-- accounts/profile.html -->
+<div>
+    팔로잉 : {{ person.followings.all|length }} / 팔로워 : {{ person.followers.all|length }}
+</div>
+{% if request.user != person %}
+  <div>
+      <form action="{% url 'accounts:follow' person.pk %}" method="POST">
+      {% csrf_token %}
+      {% if request.user in person.followers.all %}
+          <input type="submit" value="언팔로우">
+      {% else %}
+          <input type="submit" value="팔로우">
+      {% endif %}
+      </form>
+  </div>
+{% endif %}
+```
